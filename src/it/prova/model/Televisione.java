@@ -18,15 +18,23 @@ public class Televisione {
 		super();
 		this.marca = marca;
 	}
-	
+
 	public Televisione(String marca, String modello) {
 		super();
 		this.marca = marca;
 		this.modello = modello;
 	}
-	
+
 	public Televisione(String marca, String modello, Date dataProduzione) {
 		super();
+		this.marca = marca;
+		this.modello = modello;
+		this.dataProduzione = dataProduzione;
+	}
+
+	public Televisione(Long id, String marca, String modello, Date dataProduzione) {
+		super();
+		this.id = id;
 		this.marca = marca;
 		this.modello = modello;
 		this.dataProduzione = dataProduzione;

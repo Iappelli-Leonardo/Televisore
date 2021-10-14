@@ -30,6 +30,9 @@ public class TestTelevisore {
 
 			testUpdateTeleviore(userService);
 			System.out.println("In tabella ci sono " + userService.listAll().size() + " elementi.");
+			
+			testGetTeleviore(userService);
+			System.out.println("In tabella ci sono " + userService.listAll().size() + " elementi.");
 
 			// E TUTTI I TEST VANNO FATTI COSI'
 
@@ -109,7 +112,18 @@ public class TestTelevisore {
 			throw new RuntimeException("testUpdateUser fallito ");
 
 		System.out.println("aggiornato record: " + toBeUpdated);
-		System.out.println(".......testUpdateTelevisione inizio.............");
+		System.out.println(".......testUpdateTelevisione fine.............");
+	}
+	
+	private static void testGetTeleviore(TelevisioneService televisioneService) throws Exception {
+		System.out.println(".......testGetTelevisione inizio.............");
+		
+		Televisione nuovaTelevisione = new Televisione(79L,"samsung", "rsjj", new Date());
+		televisioneService.inserisciNuovo(nuovaTelevisione);
+		
+		televisioneService.findById(nuovaTelevisione.getId());
+
+		System.out.println(".......testGetTelevisione fine.............");
 	}
 
 }
